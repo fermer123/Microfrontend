@@ -1,6 +1,4 @@
-import styled, {createGlobalStyle} from 'styled-components';
-
-import {Box} from '@mui/system';
+import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 

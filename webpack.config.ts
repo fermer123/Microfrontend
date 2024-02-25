@@ -13,13 +13,15 @@ export default (env: BuildEnv) => {
   };
 
   const mode = env.mode || 'development';
-  const port = env.port || 3001;
+  const port = env.port || 3002;
+  const analyzerPort = env.analyzerPort || 7777;
   const isDev = mode === 'development';
   const config = buildWebpackConfig({
     mode,
     paths,
     isDev,
     port,
+    analyzerPort,
   });
 
   return config;

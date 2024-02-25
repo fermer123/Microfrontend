@@ -5,7 +5,13 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 
 import {darkThemeColors, lightThemeColors} from './default_variables';
 
-const Theme = ({children}: {children: React.ReactNode}) => {
+const Theme = ({
+  children,
+  theme,
+}: {
+  children: React.ReactNode;
+  theme: string;
+}) => {
   const muiTheme = createTheme();
 
   return (
