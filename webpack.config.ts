@@ -5,11 +5,13 @@ import {BuildEnv, BuildPaths} from './config/build/types/config';
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
-    entry: path.join(__dirname, 'src/index.tsx'),
+    entry: path.join(__dirname, 'src/index.ts'),
     output: path.join(__dirname, 'build'),
     template: path.join(__dirname, 'public/index.html'),
     analyzer: path.join(__dirname, 'dist/bundle-analysis.html'),
     tsconfigPath: path.join(__dirname, 'tsconfig.json'),
+    publicPath: 'http://localhost:3002/',
+    exposesPath: path.join(__dirname, 'src/pages/Snackbar/SnackbarComponent'),
   };
 
   const mode = env.mode || 'development';
