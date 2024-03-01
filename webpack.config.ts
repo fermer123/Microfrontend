@@ -10,8 +10,10 @@ export default (env: BuildEnv) => {
     template: path.join(__dirname, 'public/index.html'),
     analyzer: path.join(__dirname, 'dist/bundle-analysis.html'),
     tsconfigPath: path.join(__dirname, 'tsconfig.json'),
-    publicPath: 'http://localhost:3002/',
-    exposesPath: path.join(__dirname, 'src/pages/Snackbar/SnackbarComponent'),
+    exposesPathSnackBar: path.join(
+      __dirname,
+      'src/pages/Snackbar/SnackbarComponent',
+    ),
   };
 
   const mode = env.mode || 'development';

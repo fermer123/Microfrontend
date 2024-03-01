@@ -6,8 +6,7 @@ export interface BuildPaths {
   template: string;
   analyzer: string;
   tsconfigPath: string;
-  publicPath: string;
-  exposesPath: string;
+  exposesPathSnackBar: string;
 }
 
 export interface BuildEnv {

@@ -19,7 +19,7 @@ function buildPlugins({
       runtime: false,
       library: {type: 'var', name: 'snackbar'},
       exposes: {
-        './SnackbarComponent': paths.exposesPath,
+        './SnackbarComponent': paths.exposesPathSnackBar,
       },
       shared: {
         ...packageJson.dependencies,
