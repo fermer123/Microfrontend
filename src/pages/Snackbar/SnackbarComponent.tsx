@@ -21,7 +21,7 @@ export interface ISnackbarComponentProps {
 
 const SnackbarComponent: FC<Partial<ISnackbarComponentProps>> = ({
   open = true,
-  setOpen,
+  setOpen = () => true,
   message = 'hello',
   error,
 }) => {
