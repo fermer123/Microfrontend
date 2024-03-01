@@ -23,9 +23,10 @@ function buildPlugins({
       },
       shared: {
         ...packageJson.dependencies,
+
         react: {
-          eager: true,
           singleton: true,
+          eager: true,
           requiredVersion: packageJson.dependencies.react,
         },
         'react-dom': {
@@ -37,6 +38,16 @@ function buildPlugins({
           singleton: true,
           eager: true,
           requiredVersion: packageJson.dependencies['@mui/material'],
+        },
+        '@mui/styled-engine-sc':{
+          singleton: true,
+          eager: true,
+          requiredVersion: packageJson.dependencies['@mui/styled-engine-sc'],
+        },
+        'styled-components': {
+          singleton: true,
+          eager: true,
+          requiredVersion: packageJson.dependencies['styled-components'],
         },
         '@mui/icons-material': {
           singleton: true,

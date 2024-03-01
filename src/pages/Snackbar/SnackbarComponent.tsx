@@ -19,10 +19,10 @@ export interface ISnackbarComponentProps {
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const SnackbarComponent: FC<ISnackbarComponentProps> = ({
-  open,
+const SnackbarComponent: FC<Partial<ISnackbarComponentProps>> = ({
+  open = true,
   setOpen,
-  message,
+  message = 'hello',
   error,
 }) => {
   const handleClose = useCallback(
