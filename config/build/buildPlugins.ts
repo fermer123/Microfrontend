@@ -16,14 +16,13 @@ function buildPlugins({
     new container.ModuleFederationPlugin({
       name: 'snackbar',
       filename: 'remoteEntry.js',
-      runtime: false,
-      library: {type: 'var', name: 'snackbar'},
+      remotes: {
+        store: 'store@http://localhost:3001/remoteEntry.js',
+      },
       exposes: {
         './SnackbarComponent': paths.exposesPathSnackBar,
       },
       shared: {
-        ...packageJson.dependencies,
-
         react: {
           singleton: true,
           eager: true,
@@ -39,7 +38,7 @@ function buildPlugins({
           eager: true,
           requiredVersion: packageJson.dependencies['@mui/material'],
         },
-        '@mui/styled-engine-sc':{
+        '@mui/styled-engine-sc': {
           singleton: true,
           eager: true,
           requiredVersion: packageJson.dependencies['@mui/styled-engine-sc'],
@@ -67,7 +66,7 @@ function buildPlugins({
     isDev ? new webpack.HotModuleReplacementPlugin() : undefined,
     isDev
       ? new BundleAnalyzerPlugin({
-          openAnalyzer: true,
+          openAnalyzer: false,
           analyzerMode: 'server',
           reportFilename: paths.analyzer,
           analyzerPort,
