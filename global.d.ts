@@ -1,8 +1,9 @@
 import 'styled-components';
 
-declare const isDev: boolean;
-declare const baseURL: string;
-
+declare global {
+  declare const isDev: boolean;
+  declare const baseURL: string;
+}
 declare module 'styled-components' {
   export interface DefaultTheme {
     primaryColor: string;
